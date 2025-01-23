@@ -1,112 +1,211 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Nathalia CF</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-    .projeto {
-      margin-bottom: 2rem;
-    }
-    .projeto img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #333;
-      color: white;
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio UX/UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        header .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .welcome {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .welcome h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+        .welcome button {
+            background-color: #4a2c2c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .portfolio-section {
+            background-color: #f7d6d6;
+            padding: 50px 0;
+        }
+
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            padding: 10px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .card p {
+            padding: 0 10px 10px;
+            text-align: center;
+            color: #666;
+        }
+
+        .card button {
+            display: block;
+            margin: 10px auto;
+            background-color: #4a2c2c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .projects {
+            padding: 50px 0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .projects .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .projects .card p {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4a2c2c;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Portfolio - Nathalia C Fazioni</h1>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">Portfólio UX/UI</div>
+        <nav class="menu">
+            <a href="#welcome">Verkefni</a>
+            <a href="#about">Um Mig</a>
+            <a href="#contact">Samskipti</a>
+        </nav>
+    </header>
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Olá! Sou Nathalia, uma designer de UX apaixonada por criar experiências intuitivas e impactantes. Aqui você encontrará alguns dos meus projetos favoritos.</p>
-  </section>
+    <section id="welcome" class="container welcome">
+        <div>
+            <h1>Fyrirgefðu, ég er snillingur!</h1>
+            <p>Hér eru verkefni mín sem munu heilla þig!</p>
+            <button>Skoða Verkefni</button>
+        </div>
+        <img src="https://via.placeholder.com/400" alt="Laptop on desk">
+    </section>
 
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projeto">
-      <h3>Projeto 1: App de Delivery</h3>
-      <img src="images/projeto1.png" alt="Mockup do projeto 1">
-      <p>Trabalhei no design de um aplicativo de delivery focado em simplicidade e eficiência. Conduzi testes de usabilidade e implementei melhorias baseadas em feedback dos usuários.</p>
-    </div>
-    <div class="projeto">
-      <h3>Projeto 2: Plataforma Educacional</h3>
-      <img src="images/projeto2.png" alt="Mockup do projeto 2">
-      <p>Desenvolvi interfaces para uma plataforma de ensino à distância, com foco em acessibilidade e engajamento do aluno.</p>
-    </div>
-    <div class="projeto">
-      <h3>Projeto 3: Site de Portfólio</h3>
-      <img src="images/projeto3.png" alt="Mockup do projeto 3">
-      <p>Um site criado para profissionais criativos apresentarem seus trabalhos de forma moderna e responsiva.</p>
-    </div>
-  </section>
+    <section class="portfolio-section">
+        <h2>Mínir Snillingar</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Sigriður Jónsdóttir">
+                <h3>Sigriður Jónsdóttir</h3>
+                <p>UX Hönnuður</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Gunnar Björnsson">
+                <h3>Gunnar Björnsson</h3>
+                <p>UI Hönnuður</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Anna Guðmundsdóttir">
+                <h3>Anna Guðmundsdóttir</h3>
+                <p>Hönnunar Sérfræðingur</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Você pode entrar em contato comigo pelos canais abaixo:</p>
-    <ul>
-      <li><a href="mailto:seuemail@example.com">E-mail</a></li>
-      <li><a href="https://www.linkedin.com/in/seulinkedin/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
+    <section class="projects">
+        <h2>Verkefni Mín</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Basic Project">
+                <h3>Basic</h3>
+                <p>Fyrir fyrirtæki sem þurfti að endurhanna vefsíðu sína.</p>
+                <button>$500</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Vefsíða">
+                <h3>Vefsíða</h3>
+                <p>Hönnun á appi sem breytti lífi notenda.</p>
+                <button>$300</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="App">
+                <h3>App</h3>
+                <p>Skapandi lausn fyrir fyrirtæki sem vantaði nýja ímynd.</p>
+                <button>$400</button>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>Feito com ❤ por Nathalia CF. <a href="#top">Voltar ao topo</a></p>
-  </footer>
+    <footer>
+        <p>© 2025 Portfólio UX/UI. Allur réttur áskilinn.</p>
+    </footer>
 </body>
 </html>
-
