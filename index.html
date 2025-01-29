@@ -145,12 +145,20 @@
         }
         .modal-content {
             position: relative;
-            max-width: 90%;
+            max-width: 75%; /* Define a largura máxima do modal */
             max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto; /* Centraliza o conteúdo */
         }
         .modal-content img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 100%; /* A imagem ocupa 100% do espaço disponível no modal-content */
+            max-height: 80vh; /* Limita a altura da imagem para 80% da altura da viewport */
+            display: none; /* Inicialmente, todas as imagens estão ocultas */
+        }
+        .modal-content img.active {
+            display: block; /* Exibe a imagem ativa */
         }
         .close {
             position: absolute;
@@ -215,7 +223,7 @@
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
                 <div class="modal-content">
                     <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome.png" alt="Imagem 1 do Projeto 1">
-                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png" alt="Imagem 11 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png" alt="Imagem 2 do Projeto 1">
                 </div>
                 <a class="prev" onclick="changeImage('modal1', -1)">&#10094;</a>
                 <a class="next" onclick="changeImage('modal1', 1)">&#10095;</a>
@@ -248,8 +256,8 @@
             <div id="modal3" class="modal">
                 <span class="close" onclick="closeModal('modal3')">&times;</span>
                 <div class="modal-content">
- 		<img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/c26c0595-ac12-43d3-95ce-b7d54dd18dff.jpg" alt="Imagem 3 do Projeto 3">
-                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/e9b6dacf-011d-4d23-8fca-89626d79d66b.jpg" alt="Imagem 33 do Projeto 3">
+ 		<img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/c26c0595-ac12-43d3-95ce-b7d54dd18dff.jpg" alt="Imagem 1 do Projeto 3">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/e9b6dacf-011d-4d23-8fca-89626d79d66b.jpg" alt="Imagem 2 do Projeto 3">
                 </div>
                 <a class="prev" onclick="changeImage('modal3', -1)">&#10094;</a>
                 <a class="next" onclick="changeImage('modal3', 1)">&#10095;</a>
@@ -301,12 +309,25 @@
     <script>
         // Função para abrir o modal
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            showImage(modal, 0); // Exibe a primeira imagem ao abrir o modal
         }
 
         // Função para fechar o modal
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Função para exibir uma imagem específica
+        function showImage(modal, index) {
+            const images = modal.querySelectorAll('img');
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
         }
 
         // Função para mudar a imagem no modal
@@ -317,10 +338,9 @@
 
             // Encontra o índice da imagem atual
             images.forEach((img, index) => {
-                if (img.style.display === 'block') {
+                if (img.classList.contains('active')) {
                     currentIndex = index;
                 }
-                img.style.display = 'none'; // Oculta todas as imagens
             });
 
             // Calcula o novo índice
@@ -332,7 +352,7 @@
             }
 
             // Exibe a nova imagem
-            images[newIndex].style.display = 'block';
+            showImage(modal, newIndex);
         }
 
         // Fechar o modal ao clicar fora da imagem
