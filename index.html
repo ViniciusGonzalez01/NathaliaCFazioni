@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Nathalia C. Fazioni</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
+
+
+
+ /* Seus estilos existentes aqui */
+        .linkedin-icon {
+            color: #0077b5; /* Cor do LinkedIn */
+            font-size: 24px; /* Tamanho do ícone */
+            margin-left: 10px; /* Espaçamento à esquerda */
+            text-decoration: none; /* Remove sublinhado */
+        }
+        .linkedin-icon:hover {
+            color: #005582; /* Cor ao passar o mouse */
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -67,7 +82,7 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 5px;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -281,6 +296,8 @@
                 <a class="next" onclick="changeImage('modal4', 1)">&#10095;</a>
             </div>
 
+
+
     </section>
     <section id="about">
         <h2>Sobre</h2>
@@ -292,7 +309,10 @@
         <p>Design de Interfaces, Prototipagem, Validação de Usuários, Metodologias Ágeis.</p>
         <p><strong>Minhas ferramentas favoritas:</strong></p>
         <p>Figma, Azure DevOps, Adobe Photoshop, Adobe Illustrator.</p>
-    </section>
+
+
+ 
+
     <section id="contact">
         <h2>Contato</h2>
         <form class="contact-form">
@@ -300,14 +320,26 @@
             <input type="email" placeholder="Email" required>
             <input type="tel" placeholder="Telefone">
             <textarea placeholder="Mensagem" rows="5" required></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit">Enviar</button> 
         </form>
-        <p>Email: <a href="mailto:naf.clzi@gmail.com">naf.clzi@gmail.com</a></p>
+
+
+
+<p>
+            LinkedIn: 
+            <a href="https://www.linkedin.com/in/nathalia-c-fazioni-88a603275/" target="_blank" class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </p>
+
+        
     </section>
-    <footer>
+
+<p> <footer>
+
         <p>&copy; 2025 Nathalia C. Fazioni. Todos os direitos reservados.</p>
     </footer>
-
+</p>
     <script>
         // Função para abrir o modal
         function openModal(modalId) {
