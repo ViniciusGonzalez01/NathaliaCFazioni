@@ -32,7 +32,7 @@
         }
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             background-color: #444;
             padding: 10px;
         }
@@ -108,6 +108,18 @@
         .project-link:hover {
             text-decoration: underline;
         }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav {
+                justify-content: center;
+            }
+        }
+        .modal-links {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -129,25 +141,13 @@
             <div class="project-item">
                 <img src="caminho/para/imagem1.jpg" alt="Fluxo de Pagamento Externo">
                 <p><strong>Fluxo de Pagamento Externo - Protótipo de Interface</strong></p>
-                <p>Um link de pagamento é gerado pelo Gestor de Rede/Escola Esportiva e enviado ao pagador, que pode efetuar a transação sem necessidade de fazer login na Plataforma.</p>
+                <p>Um link de pagamento é gerado pelo Gestor de Rede/Escola Esportiva e enviado ao pagador.</p>
                 <a href="#" class="project-link">Ver Projeto</a>
             </div>
             <div class="project-item">
                 <img src="caminho/para/imagem2.jpg" alt="Solicitação de Estorno Via Sistema">
                 <p><strong>Solicitação de Estorno Via Sistema - Protótipo de Interface</strong></p>
-                <p>Gestores de Rede/Escola recebem, aprovam ou recusam pedidos de estorno feitos por Associados, com acesso a um histórico detalhado. Associados podem acompanhar os pedidos enviados, visualizando seus detalhes e status.</p>
-                <a href="#" class="project-link">Ver Projeto</a>
-            </div>
-            <div class="project-item">
-                <img src="caminho/para/imagem3.jpg" alt="Sistema de Emblemas">
-                <p><strong>Sistema de Emblemas - Protótipo de Interface</strong></p>
-                <p>Gestores de Rede ou Escola criam emblemas dinâmicos para que Professores os atribuam a Alunos que cumprirem metas, promovendo engajamento nas aulas. Alunos colecionam emblemas e acompanham sua posição em um Ranking com os colegas.</p>
-                <a href="#" class="project-link">Ver Projeto</a>
-            </div>
-            <div class="project-item">
-                <img src="caminho/para/imagem4.jpg" alt="Sistema de Eleições">
-                <p><strong>Sistema de Eleições - Protótipo de Interface</strong></p>
-                <p>Gestores de Organizações criam eleições internas, com cadastro de participantes, períodos e perfis votantes, além de visualização de resultados com gráficos e opção de exportação.</p>
+                <p>Gestores podem aprovar ou recusar pedidos de estorno feitos por Associados.</p>
                 <a href="#" class="project-link">Ver Projeto</a>
             </div>
         </div>
@@ -155,13 +155,6 @@
     <section id="about">
         <h2>Sobre</h2>
         <p>Oi! Eu sou Nathala C. Fazioni, uma UI/UX Designer.</p>
-        <p>Desenvolvo protótipos de interfaces para diversos fluxos de navegação, baseados em requisitos de histórias de usuário e regras de negócio.</p>
-        <p>Tive a oportunidade de trabalhar em projetos promocionais e de produtos, lidando com todo o processo de design, desde a concepção até a validação com stakeholders.</p>
-        <p>Também tenho experiência em metodologias ágeis, como Scrum, e ferramentas como Figma e Azure DevOps.</p>
-        <p><strong>Minhas principais habilidades:</strong></p>
-        <p>Design de Interfaces, Prototipagem, Validação de Usuários, Metodologias Ágeis.</p>
-        <p><strong>Minhas ferramentas favoritas:</strong></p>
-        <p>Figma, Azure DevOps, Adobe Photoshop, Adobe Illustrator.</p>
     </section>
     <section id="contact">
         <h2>Contato</h2>
