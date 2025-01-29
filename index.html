@@ -1,211 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio UX/UI</title>
+    <title>Portfólio - Vitória Ferreira</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        header .menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        header .menu a {
-            text-decoration: none;
+            background-color: #f4f4f4;
             color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
             font-weight: bold;
         }
-
-        .container {
+        section {
             padding: 20px;
-            max-width: 1200px;
-            margin: auto;
+            text-align: center;
         }
-
-        .welcome {
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-form {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 50px 0;
         }
-
-        .welcome h1 {
-            font-size: 3rem;
-            color: #333;
+        .contact-form input, .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
         }
-
-        .welcome button {
-            background-color: #4a2c2c;
-            color: white;
+        .contact-form button {
             padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
-
-        .portfolio-section {
-            background-color: #f7d6d6;
-            padding: 50px 0;
-        }
-
-        .portfolio-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .cards {
+        .project-gallery {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
-
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .project-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             overflow: hidden;
             width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .card img {
+        .project-item img {
             width: 100%;
             height: auto;
         }
-
-        .card h3 {
-            padding: 10px;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .card p {
-            padding: 0 10px 10px;
-            text-align: center;
-            color: #666;
-        }
-
-        .card button {
-            display: block;
-            margin: 10px auto;
-            background-color: #4a2c2c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .projects {
-            padding: 50px 0;
-        }
-
-        .projects h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .projects .cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .projects .card p {
+        .project-item p {
+            padding: 15px;
+            font-size: 16px;
             color: #333;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #4a2c2c;
-            color: white;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Portfólio UX/UI</div>
-        <nav class="menu">
-            <a href="#welcome">Verkefni</a>
-            <a href="#about">Um Mig</a>
-            <a href="#contact">Samskipti</a>
-        </nav>
+        <h1>Vitória Ferreira</h1>
+        <p>3D Artist</p>
     </header>
-
-    <section id="welcome" class="container welcome">
-        <div>
-            <h1>Fyrirgefðu, ég er snillingur!</h1>
-            <p>Hér eru verkefni mín sem munu heilla þig!</p>
-            <button>Skoða Verkefni</button>
-        </div>
-        <img src="https://via.placeholder.com/400" alt="Laptop on desk">
-    </section>
-
-    <section class="portfolio-section">
-        <h2>Mínir Snillingar</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Sigriður Jónsdóttir">
-                <h3>Sigriður Jónsdóttir</h3>
-                <p>UX Hönnuður</p>
+    <nav>
+        <a href="#projects">Projetos</a>
+        <a href="#about">Sobre</a>
+        <a href="#contact">Contato</a>
+    </nav>
+    <section id="projects">
+        <h2>Projetos</h2>
+        <p>LIBRARY</p>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img src="caminho/para/imagem1.jpg" alt="Descrição da Imagem 1">
+                <p>Descrição do Projeto 1</p>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Gunnar Björnsson">
-                <h3>Gunnar Björnsson</h3>
-                <p>UI Hönnuður</p>
+            <div class="project-item">
+                <img src="caminho/para/imagem2.jpg" alt="Descrição da Imagem 2">
+                <p>Descrição do Projeto 2</p>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Anna Guðmundsdóttir">
-                <h3>Anna Guðmundsdóttir</h3>
-                <p>Hönnunar Sérfræðingur</p>
+            <div class="project-item">
+                <img src="caminho/para/imagem3.jpg" alt="Descrição da Imagem 3">
+                <p>Descrição do Projeto 3</p>
             </div>
         </div>
     </section>
-
-    <section class="projects">
-        <h2>Verkefni Mín</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Basic Project">
-                <h3>Basic</h3>
-                <p>Fyrir fyrirtæki sem þurfti að endurhanna vefsíðu sína.</p>
-                <button>$500</button>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Vefsíða">
-                <h3>Vefsíða</h3>
-                <p>Hönnun á appi sem breytti lífi notenda.</p>
-                <button>$300</button>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="App">
-                <h3>App</h3>
-                <p>Skapandi lausn fyrir fyrirtæki sem vantaði nýja ímynd.</p>
-                <button>$400</button>
-            </div>
-        </div>
+    <section id="about">
+        <h2>Sobre</h2>
+        <p>Oi! Eu sou Vitória Ferreira, uma artista 3D.</p>
+        <p>Desenvolvo ilustrações 3D como parte da equipe criativa da PiePay e trabalho como freelancer.</p>
+        <p>Tive a oportunidade de trabalhar em projetos promocionais e de produtos internacionais, lidando com todo o pipeline 3D (modelagem, texturização, lookdev e renderização).</p>
+        <p>Também tenho uma experiência de 6 anos como designer gráfica, trabalhando com anúncios e marcas tanto online quanto offline.</p>
+        <p><strong>Minhas principais habilidades:</strong></p>
+        <p>Modelagem 3D, Texturização, Lookdev, Renderização, Ilustração, Animação.</p>
+        <p><strong>Minhas ferramentas favoritas:</strong></p>
+        <p>Blender, ZBrush, Substance Painter, Adobe Photoshop, Adobe Illustrator.</p>
     </section>
-
+    <section id="contact">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Telefone">
+            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Email: <a href="mailto:hello@vicefemtia.com">hello@vicefemtia.com</a></p>
+    </section>
     <footer>
-        <p>© 2025 Portfólio UX/UI. Allur réttur áskilinn.</p>
+        <p>&copy; 2023 Vitória Ferreira. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
