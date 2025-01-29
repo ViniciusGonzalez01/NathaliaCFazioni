@@ -203,31 +203,72 @@
     <section id="projects">
         <h2>Projetos</h2>
         <div class="project-gallery">
+            <!-- Projeto 1 -->
             <div class="project-item">
                 <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome.png" alt="Fluxo de Pagamento Externo">
                 <p><strong>Fluxo de Pagamento Externo - Protótipo de Interface</strong></p>
                 <p>Um link de pagamento é gerado pelo Gestor de Rede/Escola Esportiva e enviado ao pagador, que pode efetuar a transação sem necessidade de fazer login na Plataforma.</p>
-                <a href="#" class="project-link" onclick="openModal(0)">Ver Projeto</a>
+                <a href="#" class="project-link" onclick="openModal('modal1')">Ver Projeto</a>
             </div>
+            <!-- Modal do Projeto 1 -->
+            <div id="modal1" class="modal">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome.png" alt="Imagem 1 do Projeto 1">
+                </div>
+                <a class="prev" onclick="changeImage('modal1', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal1', 1)">&#10095;</a>
+            </div>
+
+            <!-- Projeto 2 -->
             <div class="project-item">
                 <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png">
                 <p><strong>Solicitação de Estorno Via Sistema - Protótipo de Interface</strong></p>
                 <p>Gestores de Rede/Escola recebem, aprovam ou recusam pedidos de estorno feitos por Associados, com acesso a um histórico detalhado. Associados podem acompanhar os pedidos enviados, visualizando seus detalhes e status.</p>
-                <a href="#" class="project-link" onclick="openModal(1)">Ver Projeto</a>
+                <a href="#" class="project-link" onclick="openModal('modal2')">Ver Projeto</a>
             </div>
+            <!-- Modal do Projeto 2 -->
+            <div id="modal2" class="modal">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png" alt="Imagem 1 do Projeto 2">
+                </div>
+                <a class="prev" onclick="changeImage('modal2', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal2', 1)">&#10095;</a>
+            </div>
+	    <!-- Projeto 3 -->
             <div class="project-item">
-                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(3).png" alt="Sistema de Emblemas">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(3).png">
                 <p><strong>Sistema de Emblemas - Protótipo de Interface</strong></p>
                 <p>Gestores de Rede ou Escola criam emblemas dinâmicos para que Professores os atribuam a Alunos que cumprirem metas, promovendo engajamento nas aulas. Alunos colecionam emblemas e acompanham sua posição em um Ranking com os colegas.</p>
-                <a href="#" class="project-link" onclick="openModal(2)">Ver Projeto</a>
+                <a href="#" class="project-link" onclick="openModal('modal2')">Ver Projeto</a>
             </div>
+            <!-- Modal do Projeto 3 -->
+            <div id="modal3" class="modal">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png" alt="Imagem 1 do Projeto 3">
+                </div>
+                <a class="prev" onclick="changeImage('modal3', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal3', 1)">&#10095;</a>
+            </div>
+            <!-- Projeto 4 -->
             <div class="project-item">
-                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(2).png" alt="Sistema de Eleições">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(2).png">
                 <p><strong>Sistema de Eleições - Protótipo de Interface</strong></p>
                 <p>Gestores de Organizações criam eleições internas, com cadastro de participantes, períodos e perfis votantes, além de visualização de resultados com gráficos e opção de exportação.</p>
-                <a href="#" class="project-link" onclick="openModal(3)">Ver Projeto</a>
+                <a href="#" class="project-link" onclick="openModal('modal4')">Ver Projeto</a>
             </div>
-        </div>
+            <!-- Modal do Projeto 4 -->
+            <div id="modal4" class="modal">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png" alt="Imagem 1 do Projeto 4">
+                </div>
+                <a class="prev" onclick="changeImage('modal4', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal4', 1)">&#10095;</a>
+            </div>
+
     </section>
     <section id="about">
         <h2>Sobre</h2>
@@ -255,50 +296,47 @@
         <p>&copy; 2025 Nathala C. Fazioni. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <img id="modalImage" src="" alt="Modal Image">
-        </div>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
-    </div>
-
     <script>
-        let currentImageIndex = 0;
-        const images = [
-            "https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome.png",
-            "https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(1).png",
-            "https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(3).png",
-            "https://raw.githubusercontent.com/ViniciusGonzalez01/Portif-lio-/refs/heads/main/Design%20sem%20nome%20(2).png"
-        ];
-
-        function openModal(index) {
-            currentImageIndex = index;
-            document.getElementById('modalImage').src = images[currentImageIndex];
-            document.getElementById('myModal').style.display = 'flex';
+        // Função para abrir o modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
         }
 
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
+        // Função para fechar o modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
         }
 
-        function changeImage(n) {
-            currentImageIndex += n;
-            if (currentImageIndex >= images.length) {
-                currentImageIndex = 0;
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1;
+        // Função para mudar a imagem no modal
+        function changeImage(modalId, n) {
+            const modal = document.getElementById(modalId);
+            const images = modal.querySelectorAll('img');
+            let currentIndex = 0;
+
+            // Encontra o índice da imagem atual
+            images.forEach((img, index) => {
+                if (img.style.display === 'block') {
+                    currentIndex = index;
+                }
+                img.style.display = 'none'; // Oculta todas as imagens
+            });
+
+            // Calcula o novo índice
+            let newIndex = currentIndex + n;
+            if (newIndex >= images.length) {
+                newIndex = 0;
+            } else if (newIndex < 0) {
+                newIndex = images.length - 1;
             }
-            document.getElementById('modalImage').src = images[currentImageIndex];
+
+            // Exibe a nova imagem
+            images[newIndex].style.display = 'block';
         }
 
         // Fechar o modal ao clicar fora da imagem
         window.onclick = function(event) {
-            const modal = document.getElementById('myModal');
-            if (event.target === modal) {
-                closeModal();
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
             }
         }
     </script>
