@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Vinícius Almeida Ferreira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset de margens e paddings */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Evita barras de rolagem horizontais */
+        }
+
+        /* Seus estilos existentes aqui */
+        .linkedin-icon {
+            color: #0077b5; /* Cor do LinkedIn */
+            font-size: 24px; /* Tamanho do ícone */
+            margin-left: 10px; /* Espaçamento à esquerda */
+            text-decoration: none; /* Remove sublinhado */
+        }
+        .linkedin-icon:hover {
+            color: #005582; /* Cor ao passar o mouse */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-image: url('https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/etapas%20do%20scrum%20%20(2).jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        header h1, header p, header .profile-pic {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            overflow: hidden;
+            border: 4px solid #fff;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin: 0; /* Remove margens extras */
+            box-sizing: border-box; /* Inclui padding na largura total */
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input, .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .project-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .project-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 60px; /* Espaço para o link fixo */
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
+        }
+        .project-item p {
+            padding: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        .project-link {
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 75%; /* Define a largura máxima do modal */
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto; /* Centraliza o conteúdo */
+        }
+        .modal-content img {
+            max-width: 100%; /* A imagem ocupa 100% do espaço disponível no modal-content */
+            max-height: 80vh; /* Limita a altura da imagem para 80% da altura da viewport */
+            display: none; /* Inicialmente, todas as imagens estão ocultas */
+        }
+        .modal-content img.active {
+            display: block; /* Exibe a imagem ativa */
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+        }
+        .prev {
+            left: 0;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <h1>Vinícius Gonzalez</h1>
+        </div>
+        <p>Scrum Master | Agile Coach</p>
+        <div class="profile-pic">
+            <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/file%20(1).png" alt="Foto de Vinícius Gonzalez">
+        </div>
+    </header>
+    <nav>
+        <a href="#projects">Projetos</a>
+        <a href="#about">Sobre</a>
+        <a href="#contact">Contato</a>
+    </nav>
+    <section id="projects">
+        <h2>Projetos</h2>
+        <div class="project-gallery">
+            <!-- Projeto 1 -->
+            <div class="project-item">
+                <img src="https://github.com/ViniciusGonzalez01/NathaliaCFazioni/blob/main/Implementa%C3%A7%C3%A3o%20de%20Scrum%20em%20Startup%20(11).jpg?raw=true" alt="Implementação de Scrum em Startup">
+                <p><strong>Implementação de Scrum em Startup</strong></p>
+                <p>Liderança na implementação de metodologias ágeis em uma startup de tecnologia, resultando em aumento de 30% na produtividade da equipe e entrega mais rápida de produtos.</p>
+                <a href="#" class="project-link" onclick="openModal('modal1')">Ver Projeto</a>
+            </div>
+            <!-- Modal do Projeto 1 -->
+            <div id="modal1" class="modal">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/1.png" alt="Imagem 1 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/2.png" alt="Imagem 2 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/3.png" alt="Imagem 3 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/4.png" alt="Imagem 4 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/5.png" alt="Imagem 5 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/6.png" alt="Imagem 6 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/7.png" alt="Imagem 7 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/8.png" alt="Imagem 8 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/9.png" alt="Imagem 9 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/10.png" alt="Imagem 10 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/11.png" alt="Imagem 11 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/12.png" alt="Imagem 12 do Projeto 1">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/13.png" alt="Imagem 13 do Projeto 1">
+
+
+                </div>
+                <a class="prev" onclick="changeImage('modal1', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal1', 1)">&#10095;</a>
+            </div>
+
+  <!-- Projeto 2: SporTI® Multisports -->
+            <div class="project-item">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Design%20sem%20nome%20(5).png">
+                <p><strong>SporTI® Multisports</strong></p>
+                <p>Plataforma voltada para a gestão de atividades multiesportivas, permitindo o acompanhamento de equipes, eventos e competições. Implementação de metodologias ágeis para organizar e priorizar demandas, promovendo a entrega contínua de valor.</p>
+                <a href="#" class="project-link" onclick="openModal('modal2')">Ver Projeto</a>
+            </div>
+            <!-- Modal do Projeto 2 -->
+            <div id="modal1" class="modal">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 1 do Projeto 2">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 2 do Projeto 2">
+                </div>
+                <a class="prev" onclick="changeImage('modal2', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal2', 1)">&#10095;</a>
+            </div>
+            <!-- Projeto 3: SporTI® Time Forte -->
+            <div class="project-item">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/de2a4e4a-b15f-4833-912f-a9e1a38d9eb1.png">
+                <p><strong>SporTI® Time Forte</strong></p>
+                <p>Extensão do SporTI® Schools, adaptada para atender a demandas específicas de gestão esportiva em escolas com alta performance em modalidades esportivas. Contribuí para a adoção de metodologias ágeis, incentivando a colaboração entre as equipes e o alinhamento com os stakeholders.</p>
+                <a href="#" class="project-link" onclick="openModal('modal3')">Ver Projeto</a>
+            </div>
+            <!-- Modal do Projeto 3 -->
+            <div id="modal3" class="modal">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 1 do Projeto 3">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 2 do Projeto 3">
+                </div>
+                <a class="prev" onclick="changeImage('modal3', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal3', 1)">&#10095;</a>
+            </div>
+            <!-- Projeto 4: SporTI® Schools -->
+            <div class="project-item">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Design%20sem%20nome%20(4).png">
+                <p><strong>SporTI® Schools</strong></p>
+                <p>Desenvolvimento de uma solução para gerenciamento esportivo em instituições de ensino, com foco em engajamento de alunos, professores e equipes. Coordenei cerimônias ágeis e eliminei impedimentos para garantir o sucesso do projeto.</p>
+                <a href="#" class="project-link" onclick="openModal('modal4')">Ver Projeto</a>
+            </div>
+            <!-- Modal do Projeto 4 -->
+            <div id="modal4" class="modal">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 1 do Projeto 4">
+                    <img src="https://via.placeholder.com/800x600" alt="Imagem 2 do Projeto 4">
+                </div>
+                <a class="prev" onclick="changeImage('modal4', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal4', 1)">&#10095;</a>
+            </div>
+
+        
+        
+            <!-- Projeto 5 -->
+            <div class="project-item">
+                <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Facilita%C3%A7%C3%A3o%20de%20Cerim%C3%B4nias%20%C3%81geis%20(Scrum%20master)%20(5).jpg">
+                <p><strong>Facilitação de Cerimônias Ágeis</strong></p>
+                <p>Facilitação de cerimônias ágeis (Sprint Planning, Daily Stand-ups, Sprint Reviews e Retrospectivas) para equipes multidisciplinares, garantindo alinhamento, colaboração eficiente e melhoria contínua. Implementei e otimizei o uso do Discord como ferramenta central de comunicação, resultando em uma significativa melhoria na fluidez e eficácia das interações entre os membros da equipe.</p>
+                <a href="#" class="project-link" onclick="openModal('modal5')">Ver Projeto</a>
+            </div>
+            <!-- Modal do Projeto 2 -->
+            <div id="modal5" class="modal">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Texto%20do%20seu%20par%C3%A1grafo%20(1).png" alt="Imagem 1 do Projeto 2">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Texto%20do%20seu%20par%C3%A1grafo%20(3).png" alt="Imagem 2 do Projeto 2">
+                    <img src="https://raw.githubusercontent.com/ViniciusGonzalez01/NathaliaCFazioni/refs/heads/main/Texto%20do%20seu%20par%C3%A1grafo.png" alt="Imagem 3 do Projeto 2">
+                </div>
+                <a class="prev" onclick="changeImage('modal5', -1)">&#10094;</a>
+                <a class="next" onclick="changeImage('modal5', 1)">&#10095;</a>
+            </div>
+
+    </section>
+
+    </section>
+    <section id="about">
+        <h2>Sobre</h2>
+        <p>Oi! Eu sou Vinícius Gonzalez, um Scrum Master e Agile Coach apaixonado por facilitar a transformação ágil de equipes e organizações.</p>
+        <p>Com experiência em liderar times multidisciplinares e promover a adoção de práticas ágeis, minha missão é ajudar equipes a se tornarem mais produtivas, colaborativas e focadas na entrega de valor para o cliente.</p>
+        <p>Tenho ampla experiência em facilitar cerimônias ágeis, como Dailys, Sprint Plannings, Reviews e Retrospectivas, além de atuar na remoção de impedimentos e no fomento de uma cultura de melhoria contínua.</p>
+        <p>Acredito no poder da colaboração e na importância de criar um ambiente onde todos se sintam capacitados para contribuir com seu melhor.</p>
+        <p><strong>Minhas principais habilidades:</strong></p>
+        <p>Facilitação de Cerimônias Ágeis, Gestão de Backlog, Coaching de Equipes, Melhoria Contínua (Kaizen), Resolução de Conflitos.</p>
+        <p><strong>Minhas ferramentas favoritas:</strong></p>
+        <p>Jira, Trello, Azure DevOps, Miro, Slack, Discord, Confluence.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Telefone">
+            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button> 
+        </form>
+
+        <p>
+            LinkedIn: 
+            <a href="https://www.linkedin.com/in/vin%C3%ADcius-almeida-ferreira-3ab8562a4/" target="_blank" class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vinícius Gonzalez. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para abrir o modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            showImage(modal, 0); // Exibe a primeira imagem ao abrir o modal
+        }
+
+        // Função para fechar o modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Função para exibir uma imagem específica
+        function showImage(modal, index) {
+            const images = modal.querySelectorAll('img');
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        // Função para mudar a imagem no modal
+        function changeImage(modalId, n) {
+            const modal = document.getElementById(modalId);
+            const images = modal.querySelectorAll('img');
+            let currentIndex = 0;
+
+            // Encontra o índice da imagem atual
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+
+            // Calcula o novo índice
+            let newIndex = currentIndex + n;
+            if (newIndex >= images.length) {
+                newIndex = 0;
+            } else if (newIndex < 0) {
+                newIndex = images.length - 1;
+            }
+
+            // Exibe a nova imagem
+            showImage(modal, newIndex);
+        }
+
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
